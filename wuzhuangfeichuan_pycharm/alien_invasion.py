@@ -31,11 +31,14 @@ def run_pygame():
     while True:
 
         #调用game_functions模块check_events方法 监视键盘和鼠标事件
-        gf.check_events(ship)
+        gf.check_events(ai_settings,screen,ship,bullets)
         #飞船移动
         ship.update()
+        #子弹向上移动
+        bullets.update()
+
         #调用gf模块update_screen方法 更新屏幕
-        gf.update_screen(ai_settings,screen,ship)
+        gf.update_screen(ai_settings,screen,ship,bullets)
 
 
 
