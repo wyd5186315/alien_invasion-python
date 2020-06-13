@@ -6,7 +6,8 @@ from settings import Settings
 from ship import Ship
 #导入监听键盘鼠标事件模块并取名为gf
 import game_functions as gf
-
+#导入精灵编组
+from pygame.sprite import Group
 
 #游戏开始
 def run_pygame():
@@ -22,6 +23,10 @@ def run_pygame():
 
     #创建一艘飞船
     ship=Ship(ai_settings,screen)
+
+    #创建用于存储子弹的编组
+    bullets=Group()
+
     #开始游戏的主循环
     while True:
 
